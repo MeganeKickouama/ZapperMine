@@ -1,0 +1,32 @@
+TO-DO LIST 
+
+1. Edit Images
+    - Zapper becomes cropped GIF
+    - Ennemies become cropped GIF
+
+2. Create World
+    - Splash Screen
+
+    IF USER WANTS STORY [There will always have a skip dialogue button to go straight to Gameplay]
+    - Arielle speaking Screen (1) [10 seconds]
+    - Nathan speaking Screen (1) [10 seconds]
+    - Zapper speaking Screen [10 seconds]
+    - Fangs + Boss fang Speaking [10 seconds]
+    ---
+    - Level 0 [Tutorial; can be skipped]
+    - Level 2
+    - Level 3
+    - Level 4...
+    - Access level Screen 
+    - Game Over Screen
+    - Level Won Screen
+
+3. Create Actors 
+[Arielle and Nathan do not need their own actors, as they are part of their own screens]
+
+    - Zapper 
+    - Orange Fang
+    - Green Fang
+    - Blue Fang
+
+    - Boss Fang [For the middle and last level]
