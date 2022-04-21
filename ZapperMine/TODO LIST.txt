@@ -28,5 +28,8 @@ TO-DO LIST
     - Orange Fang
     - Green Fang
     - Blue Fang
+    - Coin
+    - Obstacle horizontal
+    - Obstacle Vertical
 
     - Boss Fang [For the middle and last level]
