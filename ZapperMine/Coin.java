@@ -12,8 +12,12 @@ public class Coin extends Actor
      * Act - do whatever the Coin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    GifImage coinAnimation = new GifImage("Untitled_Artwork.gif");
+    
     public void act()
     {
-        // Add your action code here.
+        setImage(coinAnimation.getCurrentImage());
+        getImage().scale(55, 55);
     }
 }

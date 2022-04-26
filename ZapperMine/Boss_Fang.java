@@ -8,12 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boss_Fang extends Actor
 {
-    /**
-     * Act - do whatever the Boss_Fang wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GifImage bossFangGIF = new GifImage("Boss_Fang_Animation.gif");
     public void act()
     {
-        // Add your action code here.
+        setImage(bossFangGIF.getCurrentImage());
+        getImage().scale(80, 80);
+    }
+    
+    public void eatCoin() {
+        
+        World currentWorld = getWorld();
+        Actor coin = getOneIntersectingObject(Coin.class);
+        
+        if (coin != null) {
+            
+            currentWorld.removeObject(coin);
+        }
+        
     }
 }
