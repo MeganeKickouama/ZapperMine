@@ -9,15 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Boss_Fang extends Fangs
 {
     GifImage bossFangGIF = new GifImage("Boss_Fang_Animation.gif");
+    int coinsEaten = 0;
     public void act()
     {
         setImage(bossFangGIF.getCurrentImage());
         getImage().scale(80, 80);
         
         move(2);
-    
         eatCoin();
         transitionToGameLostWorld();
+        touchBlock();
         
         
     }
@@ -52,5 +53,43 @@ public class Boss_Fang extends Fangs
         if (coinCount == 1 && coin != null) {
             return true;
         } else return false; // fix later.. Should transition to world when its last coin and its eaten by fang
+    }
+    
+    public void touchBlock() {
+        
+        Actor horizontal = (Actor)getOneIntersectingObject(Obstacle_Horizontal.class);
+        Actor vertical = (Actor)getOneIntersectingObject(Obstacle_Vertical.class);
+        
+        int num = 1;
+        if (horizontal != null) {
+            
+            if (num % 1 == 0) {
+                turn(180);
+                //move(2);
+                num++;
+            }
+            if (num % 1 != 0) {
+                
+                //turn(-90);
+                move(-2);
+                num++;
+            }
+            
+        }
+        if (vertical != null) {
+            
+            if (num % 1 == 0) {
+                
+                turn(180);
+                setLocation(getX(), getY() - 2);
+                num++;
+            }
+            if (num  % 1 != 0) {
+                
+                //turn(-45);
+                setLocation(getX(), getY() + 2);
+                num++;
+            }
+        }
     }
 }

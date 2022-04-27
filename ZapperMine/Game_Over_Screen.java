@@ -16,6 +16,6 @@ public class Game_Over_Screen extends World
     public Game_Over_Screen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(700, 500, 1); 
+        super(900, 700, 1);
     }
 }

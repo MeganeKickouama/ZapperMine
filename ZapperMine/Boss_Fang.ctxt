@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ transitionToGameLostWorld()
 comment4.params=
 comment4.target=boolean\ ateLastCoin()
-numComments=5
+comment5.params=
+comment5.target=void\ touchBlock()
+numComments=6
