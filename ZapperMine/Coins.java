@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Coin extends Actor
+public class Coins extends Actor
 {
     /**
      * Act - do whatever the Coin wants to do. This method is called whenever

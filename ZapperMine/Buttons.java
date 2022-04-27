@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Acces_Level_Button here.
+ * Write a description of class Buttons here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Acces_Level_Button extends Buttons
+public class Buttons extends Actor
 {
     /**
-     * Act - do whatever the Acces_Level_Button wants to do. This method is called whenever
+     * Act - do whatever the Buttons wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

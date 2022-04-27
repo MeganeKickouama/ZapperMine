@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Fang extends Actor
+public class Fang extends Fangs
 {
     public Fang() {
         
@@ -34,6 +34,18 @@ public class Fang extends Actor
     
     public void act()
     {
+        eatCoin();
+    }
+    
+    public void eatCoin() {
+        
+        World currentWorld = getWorld();
+        Actor coin = (Actor)getOneIntersectingObject(Coins.class);
+        
+        if (coin != null) {
+            
+            currentWorld.removeObject(coin);
+        }
         
     }
 }

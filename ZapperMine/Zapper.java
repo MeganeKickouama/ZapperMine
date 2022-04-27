@@ -17,15 +17,38 @@ public class Zapper extends Actor
     GifImage zapperRight = new GifImage("Zapper_Side_View_(right).gif");
     public void act()
     {
+        eatCoin();
+        
         setImage(zapperLeft.getCurrentImage());
-        // Add your action code here.
+        getImage().scale(80, 80);
+        
         if (Greenfoot.isKeyDown("left")) {
+            move(-2);
             setImage(zapperLeft.getCurrentImage());
         }
         if (Greenfoot.isKeyDown("right")) {
+            move(2);
             setImage(zapperRight.getCurrentImage());
+            getImage().scale(80, 80);
+        }
+        if (Greenfoot.isKeyDown("up")) {
+            setLocation(getX(), getY()-2);
+        }
+        if (Greenfoot.isKeyDown("down")) {
+            setLocation(getX(), getY()+2);
         }
         
-        getImage().scale(80, 80);
+    }
+    
+    public void eatCoin() {
+        
+        World currentWorld = getWorld();
+        Actor coin = (Actor)getOneIntersectingObject(Coins.class);
+        
+        if (coin != null) {
+            
+            currentWorld.removeObject(coin);
+        }
+        
     }
 }
