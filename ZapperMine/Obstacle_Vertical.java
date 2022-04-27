@@ -8,25 +8,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Obstacle_Vertical extends Blocks
 {
-    /**
-     * Act - do whatever the Obstacle_Vertical wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         // Add your action code here.
         killZapper();
+        transitionToLevelWon();
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (Greenfoot.mouseDragged(this)) {
+            
+            setLocation(mouse.getX(), mouse.getY());
+        }
+
+    
     }
     
     public void killZapper() {
-        
-        World currentWorld = getWorld();
-        Actor zapper = (Actor)getOneIntersectingObject(Zapper.class);
-        
-        if (zapper != null) {
             
-            currentWorld.removeObject(zapper);
+            World currentWorld = getWorld();
+            Actor zapper = (Actor)getOneIntersectingObject(Zapper.class);
+            
+            if (zapper != null) {
+                currentWorld.removeObject(zapper);
+                
+            }
+            
         }
         
+    public boolean isZapperDead() {
+        
+        World world = getWorld();
+        int zapperCount = world.getObjects(Zapper.class).size();
+        
+        if (zapperCount == 0) {
+            return true;
+        } else return false;
     }
+    
+    public void transitionToLevelWon() {
+        
+        if (isZapperDead()) {
+            Greenfoot.setWorld(new Level_Won());
+        }
+    }
+
+    
 }
