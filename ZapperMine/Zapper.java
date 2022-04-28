@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Zapper extends Actor
 {
-    /**
-     * Act - do whatever the Zapper wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     GifImage zapperLeft = new GifImage("Zapper_Side_View_(left).gif");
     GifImage zapperRight = new GifImage("Zapper_Side_View_(right).gif");
     public void act()
@@ -40,6 +35,8 @@ public class Zapper extends Actor
         
     }
     
+    // the wonworld is inside of the eatCoin() method because 
+    // the point of the game is to get the last coin.
     public void eatCoin() {
         
         World currentWorld = getWorld();
@@ -48,7 +45,10 @@ public class Zapper extends Actor
         if (coin != null) {
             
             currentWorld.removeObject(coin);
+            if (currentWorld.getObjects(Coins.class).size() == 0) {
+                
+                 Greenfoot.setWorld(new Level_Won());
+            }
         }
-        
     }
 }

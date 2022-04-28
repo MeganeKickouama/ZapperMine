@@ -12,7 +12,7 @@ public class Obstacle_Vertical extends Blocks
     {
         // Add your action code here.
         killZapper();
-        transitionToLevelWon();
+        transitionToLevelLost();
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if (Greenfoot.mouseDragged(this)) {
             
@@ -44,10 +44,10 @@ public class Obstacle_Vertical extends Blocks
         } else return false;
     }
     
-    public void transitionToLevelWon() {
+    public void transitionToLevelLost() {
         
         if (isZapperDead()) {
-            Greenfoot.setWorld(new Level_Won());
+            Greenfoot.setWorld(new Level_Lost());
         }
     }
 

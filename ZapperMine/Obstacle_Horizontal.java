@@ -8,25 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Obstacle_Horizontal extends Blocks
 {
-    static int dragLevel1 = 1;
+    int dragLevel1 = 1;
     public void act()
     {
         // Add your action code here.
         killZapper();
-        transitionToLevelWon();
+        transitionToLevelLost();
         dragBlock();
     }
     
     public void dragBlock() {
         
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        while (dragLevel1 > 0) {
+        if (canStillDrag()) {
             if (Greenfoot.mouseDragged(this)) {
             
             setLocation(mouse.getX(), mouse.getY());
             dragLevel1--;
+            // make block highlighted
             }
-        }
+        } // else display "zero available drags"
     }
     
     public void killZapper() {
@@ -51,19 +52,17 @@ public class Obstacle_Horizontal extends Blocks
         } else return false;
     }
     
-    public void transitionToLevelWon() {
+    public void transitionToLevelLost() {
         
         if (isZapperDead()) {
-            Greenfoot.setWorld(new Level_Won());
+            Greenfoot.setWorld(new Level_Lost());
         }
     }
 
     /* LEVEL BOOSTERS */ 
     
     public boolean canStillDrag() {
-        if (dragLevel1 > 0) {
-            return true;
-        } else return false;
+        return (dragLevel1 > 0);
     }
     
 }

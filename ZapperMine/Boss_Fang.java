@@ -17,7 +17,6 @@ public class Boss_Fang extends Fangs
         
         move(2);
         eatCoin();
-        transitionToGameLostWorld();
         touchBlock();
         
         
@@ -31,28 +30,12 @@ public class Boss_Fang extends Fangs
         if (coin != null) {
             
             currentWorld.removeObject(coin);
+            if (currentWorld.getObjects(Coins.class).size() == 0) {
+                
+                 Greenfoot.setWorld(new Level_Lost());
+            }
         }
         
-    }
-    
-    public void transitionToGameLostWorld() {
-    
-        
-        if (ateLastCoin()) {
-            
-            Greenfoot.setWorld(new Level_Lost());
-        }
-    }
-    
-    public boolean ateLastCoin() {
-        
-        World world = getWorld();
-        int coinCount = world.getObjects(Coins.class).size();
-        Actor coin = (Actor)getOneIntersectingObject(Coins.class);
-        
-        if (coinCount == 1 && coin != null) {
-            return true;
-        } else return false; // fix later.. Should transition to world when its last coin and its eaten by fang
     }
     
     public void touchBlock() {
@@ -82,7 +65,7 @@ public class Boss_Fang extends Fangs
                 
                 turn(180);
                 setLocation(getX(), getY() - 2);
-                num++;
+                num++; // fix later
             }
             if (num  % 1 != 0) {
                 

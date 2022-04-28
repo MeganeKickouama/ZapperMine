@@ -8,5 +8,5 @@ comment2.target=void\ killZapper()
 comment3.params=
 comment3.target=boolean\ isZapperDead()
 comment4.params=
-comment4.target=void\ transitionToLevelWon()
+comment4.target=void\ transitionToLevelLost()
 numComments=5
