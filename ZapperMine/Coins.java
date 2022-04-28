@@ -20,4 +20,14 @@ public class Coins extends Actor
         setImage(coinAnimation.getCurrentImage());
         getImage().scale(55, 55);
     }
+    
+    public void magnet() {
+        
+        
+        // Actor zapper = getWorld().getObjects(Zapper.class);
+        // Vector2D distanceCoinZapper = new Vector2D(getX() - zapper.getX(),
+        // getY() - zapper.getY());
+        
+        
+    }
 }
