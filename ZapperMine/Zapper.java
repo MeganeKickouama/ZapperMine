@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Zapper here.
  * 
@@ -10,12 +10,23 @@ public class Zapper extends Actor
 {
     GifImage zapperLeft = new GifImage("Zapper_Side_View_(left).gif");
     GifImage zapperRight = new GifImage("Zapper_Side_View_(right).gif");
+    
+    int magnetChance_LVL1 = 1;
     public void act()
     {
         eatCoin();
         
         setImage(zapperLeft.getCurrentImage());
         getImage().scale(80, 80);
+        
+        commands();
+        if (canUseMagnet_LVL1()) {
+            magnet();
+        }
+        
+    }
+    
+    public void commands() {
         
         if (Greenfoot.isKeyDown("left")) {
             move(-2);
@@ -32,9 +43,7 @@ public class Zapper extends Actor
         if (Greenfoot.isKeyDown("down")) {
             setLocation(getX(), getY()+2);
         }
-        
     }
-    
     // the wonworld is inside of the eatCoin() method because 
     // the point of the game is to get the last coin.
     public void eatCoin() {
@@ -50,5 +59,28 @@ public class Zapper extends Actor
                  Greenfoot.setWorld(new Level_Won());
             }
         }
+    }
+    
+    public void magnet() {
+        
+        List<Coins> coin = getObjectsInRange(200, Coins.class);
+        if (Greenfoot.isKeyDown("m") && (!coin.isEmpty())) {
+            for (int i = 0; i < coin.size(); i++) {
+                
+                coin.get(i).turnTowards(getX(), getY());
+                coin.get(i).move(2);
+                //Vector2D coinToZapper = new Vector2D(coin.get(i).getX() - getX(), coin.get(i).getY() - getY());
+                //coinToZapper.normalize();
+                
+                //coin.move(coinToZapper*2);
+            }
+            
+            magnetChance_LVL1--;
+        }
+    }
+    
+    public boolean canUseMagnet_LVL1() {
+        
+        return (magnetChance_LVL1 >= 0);
     }
 }

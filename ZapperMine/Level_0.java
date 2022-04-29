@@ -343,7 +343,8 @@ public class Level_0 extends World
         coins7.setLocation(169,433);
         coins6.setLocation(256,500);
         zapper.setLocation(639,545);
-        zapper.setLocation(665,456);
+        zapper.setLocation(665,456); 
+        
         obstacle_Vertical9.setLocation(150,239);
         obstacle_Horizontal19.setLocation(180,301);
         coins17.setLocation(239,233);
@@ -384,6 +385,11 @@ public class Level_0 extends World
         addObject(obstacle_Vertical16,874,81);
         Obstacle_Horizontal obstacle_Horizontal27 = new Obstacle_Horizontal();
         addObject(obstacle_Horizontal27,780,22);
+        coins15.setLocation(98,100);
+        Fang fang = new Fang();
+        addObject(fang,98,100);
+        coins15.setLocation(107,127);
+        removeObject(coins15);
     }
     
 }

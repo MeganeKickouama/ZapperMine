@@ -26,6 +26,7 @@ public class Boss_Fang extends Fangs
         
         World currentWorld = getWorld();
         Actor coin = (Actor)getOneIntersectingObject(Coins.class);
+        Actor silverCoin = (Actor)getOneIntersectingObject(Silver_Coin.class);
         
         if (coin != null) {
             
@@ -36,6 +37,11 @@ public class Boss_Fang extends Fangs
             }
         }
         
+        if (silverCoin != null) { // when the fangs touch a silver coin, the game is automatically over. this makes the silver coin important to protect.
+            
+            currentWorld.removeObject(silverCoin);
+            Greenfoot.setWorld(new Level_Lost());
+        }
     }
     
     public void touchBlock() {

@@ -1,19 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Fang here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Fang extends Fangs
 {
+    GifImage fangColourBlue = new GifImage("Fang_Animation_Blue.gif");
+    GifImage fangColourGreen = new GifImage("Fang_Animation_Green.gif");
+    GifImage fangColourOrange = new GifImage("Fang_Animation_Orange.gif");
     public Fang() {
-        
-        GifImage fangColourBlue = new GifImage("Fang_Animation_Blue.gif");
-        GifImage fangColourGreen = new GifImage("Fang_Animation_Green.gif");
-        GifImage fangColourOrange = new GifImage("Fang_Animation_Orange.gif");
-        
+  
         int colourID = Greenfoot.getRandomNumber(3);
         if (colourID == 0) {
             
@@ -35,17 +28,68 @@ public class Fang extends Fangs
     public void act()
     {
         eatCoin();
+        move(2);
+        touchBlock();
     }
     
     public void eatCoin() {
         
         World currentWorld = getWorld();
         Actor coin = (Actor)getOneIntersectingObject(Coins.class);
+        Actor silverCoin = (Actor)getOneIntersectingObject(Silver_Coin.class);
         
         if (coin != null) {
             
             currentWorld.removeObject(coin);
+            if (currentWorld.getObjects(Coins.class).size() == 0) {
+                
+                 Greenfoot.setWorld(new Level_Lost());
+            }
         }
         
+        if (silverCoin != null) { // when the fangs touch a silver coin, the game is automatically over. this makes the silver coin important to protect.
+            
+            currentWorld.removeObject(silverCoin);
+            Greenfoot.setWorld(new Level_Lost());
+        }
+        
+    }
+    
+    public void touchBlock() {
+        
+        Actor horizontal = (Actor)getOneIntersectingObject(Obstacle_Horizontal.class);
+        Actor vertical = (Actor)getOneIntersectingObject(Obstacle_Vertical.class);
+        
+        int num = 1;
+        if (horizontal != null) {
+            
+            if (num % 1 == 0) {
+                turn(180);
+                //move(2);
+                num++;
+            }
+            if (num % 1 != 0) {
+                
+                //turn(-90);
+                move(-2);
+                num++;
+            }
+            
+        }
+        if (vertical != null) {
+            
+            if (num % 1 == 0) {
+                
+                turn(180);
+                setLocation(getX(), getY() - 2);
+                num++; // fix later
+            }
+            if (num  % 1 != 0) {
+                
+                //turn(-45);
+                setLocation(getX(), getY() + 2);
+                num++;
+            }
+        }
     }
 }

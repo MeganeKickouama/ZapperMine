@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Coin here.
  * 
@@ -14,20 +14,13 @@ public class Coins extends Actor
      */
     
     GifImage coinAnimation = new GifImage("Untitled_Artwork.gif");
+    public static int magnetMode = 1;
+    final int MAGNET_MODE_MAGNITUDE = 230;
     
     public void act()
     {
         setImage(coinAnimation.getCurrentImage());
         getImage().scale(55, 55);
-    }
-    
-    public void magnet() {
-        
-        
-        // Actor zapper = getWorld().getObjects(Zapper.class);
-        // Vector2D distanceCoinZapper = new Vector2D(getX() - zapper.getX(),
-        // getY() - zapper.getY());
-        
         
     }
 }
