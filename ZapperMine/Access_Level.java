@@ -16,7 +16,24 @@ public class Access_Level extends World
      */
     public Access_Level()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 700, 1);
+        super(900, 555, 1);
+
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Level_1_Button level_1_Button = new Level_1_Button();
+        addObject(level_1_Button,151,267);
+        Level_2_Button level_2_Button = new Level_2_Button();
+        addObject(level_2_Button,357,265);
+        Level_3_Button level_3_Button = new Level_3_Button();
+        addObject(level_3_Button,565,265);
+        Level_4_Button level_4_Button = new Level_4_Button();
+        addObject(level_4_Button,775,262);
+        level_4_Button.setLocation(772,265);
     }
 }
