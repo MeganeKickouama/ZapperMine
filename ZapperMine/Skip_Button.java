@@ -21,5 +21,11 @@ public class Skip_Button extends Buttons
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)) {
             setImage("Skip.png");
         }
+        
+         if (Greenfoot.mouseClicked(this)) {
+            
+            Level_1 lvl1 = new Level_1();
+            Greenfoot.setWorld(lvl1);
+        }
     }
 }

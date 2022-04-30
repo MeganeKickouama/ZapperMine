@@ -26,8 +26,24 @@ public class Play_Button extends Buttons
         
         if (Greenfoot.mouseClicked(this)) {
             
-            Level_1 level1 = new Level_1();
-            Greenfoot.setWorld(level1);
+            if (Level_1.isBeaten == true) {
+                
+                Level_2 lvl2 = new Level_2();
+                Greenfoot.setWorld(lvl2);
+                } else if (Level_2.isBeaten == true)  {
+                    
+                Level_3 lvl3 = new Level_3();
+                Greenfoot.setWorld(lvl3);
+                
+                } else if (Level_3.isBeaten == true)  {
+                    
+                Level_4 lvl4 = new Level_4();
+                Greenfoot.setWorld(lvl4);
+                
+                } else {
+                Level_1 lvl1 = new Level_1();
+                Greenfoot.setWorld(lvl1);
+            }
         }
     }
 }

@@ -37,6 +37,12 @@ public class Back_Button extends Buttons
                 Greenfoot.setWorld(splash);
                 
             }
+            if (getWorld() instanceof Level_Won) {
+                
+                Splash_Screen splash = new Splash_Screen();
+                Greenfoot.setWorld(splash);
+                
+            }
         }
     }
 }

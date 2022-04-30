@@ -115,5 +115,9 @@ public class Level_2 extends World
         addObject(coins12,656,460);
         obstacle_Vertical.setLocation(530,219);
         removeObject(obstacle_Vertical);
+        Silver_Coin silver_Coin2 = new Silver_Coin();
+        addObject(silver_Coin2,708,111);
+        removeObject(coins2);
+        silver_Coin2.setLocation(748,96);
     }
 }
