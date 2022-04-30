@@ -13,15 +13,15 @@ public class Splash_Screen extends World
      * Constructor for objects of class Splash_Screen.
      * 
      */
-    static GreenfootSound gamePlayMusic = new GreenfootSound("Zapslat_GamePlay.mp3");
+    private static GreenfootSound gamePlayMusic = new GreenfootSound("Zapslat_GamePlay.mp3");
     public Splash_Screen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 700, 1);
         // GreenfootSound gamePlayMusic = new GreenfootSound("Zapslat_GamePlay.mp3");
-        gamePlayMusic.playLoop();
-
+        started();
         prepare();
+        
     }
     /**
      * Prepare the world for the start of the program.
@@ -36,4 +36,13 @@ public class Splash_Screen extends World
         Story_Button story_Button = new Story_Button();
         addObject(story_Button,722,527);
     }
+    public void started() {
+        
+        gamePlayMusic.playLoop();
+    }
+    public void stopped() {
+        
+        gamePlayMusic.stop();
+    }
+    
 }

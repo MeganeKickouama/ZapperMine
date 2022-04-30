@@ -57,20 +57,23 @@ public class Zapper extends Actor
             currentWorld.removeObject(coin);
             if (currentWorld.getObjects(Coins.class).size() == 0) {
                 
-                Greenfoot.setWorld(new Level_Won());
-                if (getWorld() instanceof Level_1) {
+                currentWorld.stopped();
+                Level_Won lvlWon = new Level_Won();
+                Greenfoot.setWorld(lvlWon);
+                lvlWon.started();
+                if (currentWorld instanceof Level_1) {
                     
                     Level_1.isBeaten = true;
                 }
-                if (getWorld() instanceof Level_2) {
+                if (currentWorld instanceof Level_2) {
                     
                     Level_2.isBeaten = true;
                 }
-                if (getWorld() instanceof Level_3) {
+                if (currentWorld instanceof Level_3) {
                     
                     Level_3.isBeaten = true;
                 }
-                if (getWorld() instanceof Level_4) {
+                if (currentWorld instanceof Level_4) {
                     
                     Level_4.isBeaten = true;
                 }

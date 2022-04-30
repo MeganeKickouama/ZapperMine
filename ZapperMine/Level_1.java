@@ -390,4 +390,9 @@ public class Level_1 extends World
         removeObject(coins15);
     }
     
+    public void stopped() {
+        
+      
+    }
+    
 }

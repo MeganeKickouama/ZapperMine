@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level_Lost extends World
 {
-
+    private static GreenfootSound lvlLostMusic = new GreenfootSound("Zapslat_GameOver.mp3");
     /**
      * Constructor for objects of class Level_Lost.
      * 
@@ -17,8 +17,10 @@ public class Level_Lost extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 700, 1);
-
         prepare();
+        
+        
+        
     }
     /**
      * Prepare the world for the start of the program.
@@ -33,5 +35,13 @@ public class Level_Lost extends World
         Acces_Level_Button acces_Level_Button = new Acces_Level_Button();
         addObject(acces_Level_Button,608,442);
         back_Button.setLocation(458,557);
+    }
+    public void started() {
+        
+        lvlLostMusic.playLoop();
+    }
+    public void stopped() {
+        
+        lvlLostMusic.stop();
     }
 }
