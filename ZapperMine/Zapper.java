@@ -6,14 +6,19 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class Zapper extends Actor
 {
     GifImage zapperLeft = new GifImage("Zapper_Side_View_(left).gif");
     GifImage zapperRight = new GifImage("Zapper_Side_View_(right).gif");
     
-    int magnetChance_LVL1 = 1;
+    public static int coinsEatenLvl1 = 0;
+    public static int coinsEatenLvl2 = 0;
+    public static int coinsEatenLvl3 = 0;
+    public static int coinsEatenLvl4 = 0;
+    
     public void act()
-    {
+        {
         eatCoin();
         eatSilverCoin();
         
@@ -21,11 +26,9 @@ public class Zapper extends Actor
         getImage().scale(80, 80);
         
         commands();
-        if (canUseMagnet_LVL1()) {
-            magnet();
-        }
         
-    }
+        
+        }
     
     public void commands() {
         
@@ -55,7 +58,27 @@ public class Zapper extends Actor
         if (coin != null) {
             
             currentWorld.removeObject(coin);
-            if (currentWorld.getObjects(Coins.class).size() == 0) {
+            Actor silver = (Actor)getOneIntersectingObject(Silver_Coin.class);
+            
+            if (currentWorld instanceof Level_1) {
+                    
+                    coinsEatenLvl1++;
+            }
+            if (currentWorld instanceof Level_2) {
+                    
+                    coinsEatenLvl2++;
+            }
+            if (currentWorld instanceof Level_3) {
+                    
+                    coinsEatenLvl3++;
+            }
+            if (currentWorld instanceof Level_4) {
+                    
+                    coinsEatenLvl4++;
+            }
+            // if instance of levels, coinseaten++
+            if (currentWorld.getObjects(Coins.class).size() == 0 &&
+            currentWorld.getObjects(Silver_Coin.class).size() == 0) {
                 
                 currentWorld.stopped();
                 Level_Won lvlWon = new Level_Won();
@@ -64,6 +87,7 @@ public class Zapper extends Actor
                 if (currentWorld instanceof Level_1) {
                     
                     Level_1.isBeaten = true;
+                    
                 }
                 if (currentWorld instanceof Level_2) {
                     
@@ -98,28 +122,5 @@ public class Zapper extends Actor
                 }
             
         }
-    }
-    
-    public void magnet() {
-        
-        List<Coins> coin = getObjectsInRange(200, Coins.class);
-        if (Greenfoot.isKeyDown("m") && (!coin.isEmpty())) {
-            for (int i = 0; i < coin.size(); i++) {
-                
-                coin.get(i).turnTowards(getX(), getY());
-                coin.get(i).move(2);
-                //Vector2D coinToZapper = new Vector2D(coin.get(i).getX() - getX(), coin.get(i).getY() - getY());
-                //coinToZapper.normalize();
-                
-                //coin.move(coinToZapper*2);
-            }
-            
-            magnetChance_LVL1--;
-        }
-    }
-    
-    public boolean canUseMagnet_LVL1() {
-        
-        return (magnetChance_LVL1 >= 0);
     }
 }

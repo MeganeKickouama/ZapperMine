@@ -57,39 +57,12 @@ public class Fang extends Fangs
     
     public void touchBlock() {
         
-        Actor horizontal = (Actor)getOneIntersectingObject(Obstacle_Horizontal.class);
         Actor vertical = (Actor)getOneIntersectingObject(Obstacle_Vertical.class);
         
-        int num = 1;
-        if (horizontal != null) {
-            
-            if (num % 1 == 0) {
-                turn(180);
-                //move(2);
-                num++;
-            }
-            if (num % 1 != 0) {
-                
-                //turn(-90);
-                move(-2);
-                num++;
-            }
-            
-        }
+        
         if (vertical != null) {
             
-            if (num % 1 == 0) {
-                
-                turn(180);
-                setLocation(getX(), getY() - 2);
-                num++; // fix later
-            }
-            if (num  % 1 != 0) {
-                
-                //turn(-45);
-                setLocation(getX(), getY() + 2);
-                num++;
-            }
+            turn(180);
         }
     }
 }

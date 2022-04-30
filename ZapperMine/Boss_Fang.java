@@ -18,6 +18,7 @@ public class Boss_Fang extends Fangs
         move(2);
         eatCoin();
         touchBlock();
+        eatZapper();
         
         
     }
@@ -46,25 +47,9 @@ public class Boss_Fang extends Fangs
     
     public void touchBlock() {
         
-        Actor horizontal = (Actor)getOneIntersectingObject(Obstacle_Horizontal.class);
         Actor vertical = (Actor)getOneIntersectingObject(Obstacle_Vertical.class);
         
         int num = 1;
-        if (horizontal != null) {
-            
-            if (num % 1 == 0) {
-                turn(180);
-                //move(2);
-                num++;
-            }
-            if (num % 1 != 0) {
-                
-                //turn(-90);
-                move(-2);
-                num++;
-            }
-            
-        }
         if (vertical != null) {
             
             if (num % 1 == 0) {
@@ -79,6 +64,16 @@ public class Boss_Fang extends Fangs
                 setLocation(getX(), getY() + 2);
                 num++;
             }
+        }
+    }
+    
+    public void eatZapper() {
+        
+        Actor zapper = (Actor)getOneIntersectingObject(Zapper.class);
+        if (zapper != null) {
+            
+            World world = getWorld();
+            world.removeObject(zapper);
         }
     }
 }

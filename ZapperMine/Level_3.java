@@ -84,5 +84,23 @@ public class Level_3 extends World
         addObject(fang2,775,461);
         Zapper zapper = new Zapper();
         addObject(zapper,118,456);
+        Coins coins5 = new Coins();
+        addObject(coins5,693,219);
+        Coins coins6 = new Coins();
+        addObject(coins6,600,103);
+        Coins coins7 = new Coins();
+        addObject(coins7,299,102);
+        Coins coins8 = new Coins();
+        addObject(coins8,194,214);
+        Coins coins9 = new Coins();
+        addObject(coins9,699,342);
+        Coins coins10 = new Coins();
+        addObject(coins10,184,331);
+        Coins coins11 = new Coins();
+        addObject(coins11,303,449);
+        Coins coins12 = new Coins();
+        addObject(coins12,598,447);
+        Counter counter = new Counter();
+        addObject(counter,746,53);
     }
 }

@@ -342,7 +342,7 @@ public class Level_1 extends World
         coins6.setLocation(256,500);
         zapper.setLocation(639,545);
         zapper.setLocation(665,456); 
-        
+
         obstacle_Vertical9.setLocation(150,239);
         obstacle_Horizontal19.setLocation(180,301);
         coins17.setLocation(239,233);
@@ -388,11 +388,9 @@ public class Level_1 extends World
         addObject(fang,98,100);
         coins15.setLocation(107,127);
         removeObject(coins15);
+        Counter counter = new Counter();
+        addObject(counter,746,223);
     }
-    
-    public void stopped() {
-        
-      
-    }
+
     
 }
