@@ -21,5 +21,11 @@ public class Level_2_Button extends Buttons
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)) {
             setImage("Lvl2.png");
         }
+        
+        if (Greenfoot.mouseClicked(this)) {
+            
+            Level_2 level2 = new Level_2();
+            Greenfoot.setWorld(level2);
+        }
     }
 }

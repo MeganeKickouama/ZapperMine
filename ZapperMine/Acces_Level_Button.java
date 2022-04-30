@@ -21,5 +21,10 @@ public class Acces_Level_Button extends Buttons
             setImage("Levels.png");
         } // if mouse clicked, access levels
         
+        if (Greenfoot.mouseClicked(this)) {
+            
+            Access_Level Levels = new Access_Level();
+            Greenfoot.setWorld(Levels);
+        }
     }
 }

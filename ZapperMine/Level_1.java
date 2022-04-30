@@ -8,15 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level_1 extends World
 {
-    /**
-     * Constructor for objects of class Level_0.
-     * 
-     */
+    public static boolean isBeaten;
     public Level_1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 555, 1); 
         prepare();
+        isBeaten = false;
     }
     
     /**

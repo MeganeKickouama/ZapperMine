@@ -15,6 +15,7 @@ public class Zapper extends Actor
     public void act()
     {
         eatCoin();
+        eatSilverCoin();
         
         setImage(zapperLeft.getCurrentImage());
         getImage().scale(80, 80);
@@ -56,8 +57,43 @@ public class Zapper extends Actor
             currentWorld.removeObject(coin);
             if (currentWorld.getObjects(Coins.class).size() == 0) {
                 
-                 Greenfoot.setWorld(new Level_Won());
+                Greenfoot.setWorld(new Level_Won());
+                if (getWorld() instanceof Level_1) {
+                    
+                    Level_1.isBeaten = true;
+                }
+                if (getWorld() instanceof Level_2) {
+                    
+                    Level_2.isBeaten = true;
+                }
+                if (getWorld() instanceof Level_3) {
+                    
+                    Level_3.isBeaten = true;
+                }
+                if (getWorld() instanceof Level_4) {
+                    
+                    Level_4.isBeaten = true;
+                }
             }
+        }
+    }
+    
+    public void eatSilverCoin() {
+        
+        World currentWorld = getWorld();
+        Actor silver = (Actor)getOneIntersectingObject(Silver_Coin.class);
+        
+        if (silver != null) {
+            
+            currentWorld.removeObject(silver);
+            Actor coin = (Actor)getOneIntersectingObject(Coins.class);
+            
+            if (currentWorld.getObjects(Coins.class).size() == 0 &&
+                currentWorld.getObjects(Silver_Coin.class).size() == 0) {
+                    
+                    Greenfoot.setWorld(new Level_Won());
+                }
+            
         }
     }
     

@@ -15,11 +15,19 @@ public class Play_Button extends Buttons
     public void act()
     {
         // Add your action code here.
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        
         if (Greenfoot.mouseMoved(this)) {
             setImage("Playh.png");
         } 
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)) {
             setImage("Play.png");
+        }
+        
+        if (Greenfoot.mouseClicked(this)) {
+            
+            Level_1 level1 = new Level_1();
+            Greenfoot.setWorld(level1);
         }
     }
 }

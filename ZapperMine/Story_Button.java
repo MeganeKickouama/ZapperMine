@@ -21,5 +21,11 @@ public class Story_Button extends Buttons
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)) {
             setImage("Story.png");
         }
+        
+        if (Greenfoot.mouseClicked(this)) {
+            
+            Context context = new Context();
+            Greenfoot.setWorld(context);
+        }
     }
 }
