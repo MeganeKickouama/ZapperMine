@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level_Won extends World
 {
-
+    private static GreenfootSound lvlWonSound = new GreenfootSound("ZapSlat_GameWon.mp3");
     /**
      * Constructor for objects of class Level_Won.
      * 
@@ -18,6 +18,7 @@ public class Level_Won extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 700, 1);
         prepare();
+        started();
     }
     /**
      * Prepare the world for the start of the program.
@@ -33,5 +34,13 @@ public class Level_Won extends World
         addObject(back_Button,310,535);
         Acces_Level_Button acces_Level_Button = new Acces_Level_Button();
         addObject(acces_Level_Button,601,535);
+    }
+    public void started() {
+       
+        lvlWonSound.playLoop();
+    } 
+    public void stopped() {
+        
+        lvlWonSound.stop();
     }
 }

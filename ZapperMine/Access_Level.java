@@ -41,4 +41,10 @@ public class Access_Level extends World
         Story_Button story_Button = new Story_Button();
         addObject(story_Button,144,405);
     }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
+    }
 }

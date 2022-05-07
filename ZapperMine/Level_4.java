@@ -80,8 +80,5 @@ public class Level_4 extends World
         Silver_Coin silver_Coin = new Silver_Coin();
         addObject(silver_Coin,804,100);
         zapper.setLocation(131,462);
-        // 
-        Counter counter = new Counter();
-        addObject(counter,702,489);
     }
 }

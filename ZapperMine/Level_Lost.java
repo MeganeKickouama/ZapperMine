@@ -8,18 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level_Lost extends World
 {
-    private static GreenfootSound lvlLostMusic = new GreenfootSound("Zapslat_GameOver.mp3");
-    /**
-     * Constructor for objects of class Level_Lost.
-     * 
-     */
+    private static GreenfootSound lvlLostMusic = new GreenfootSound("Zapslat_GameOver.wav");
+    
     public Level_Lost()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 700, 1);
         prepare();
-        
-        
+        started();
         
     }
     /**
@@ -38,7 +34,7 @@ public class Level_Lost extends World
     }
     public void started() {
         
-        lvlLostMusic.playLoop();
+        lvlLostMusic.play();
     }
     public void stopped() {
         

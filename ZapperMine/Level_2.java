@@ -119,11 +119,14 @@ public class Level_2 extends World
         addObject(silver_Coin2,708,111);
         removeObject(coins2);
         silver_Coin2.setLocation(748,96);
-        Counter counter = new Counter();
-        addObject(counter,265,253);
         removeObject(coins6);
         fang.setLocation(243,106);
-        counter.setLocation(152,82);
         fang.setLocation(263,116);
+    }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
     }
 }

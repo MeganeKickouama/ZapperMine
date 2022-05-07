@@ -32,4 +32,10 @@ public class Fangs_And_Boss_Dialogue extends World
         Next_Button next_Button = new Next_Button();
         addObject(next_Button,119,475);
     }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
+    }
 }

@@ -32,4 +32,10 @@ public class Arielle_Dialogue extends World
         Next_Button next_Button = new Next_Button();
         addObject(next_Button,111,204);
     }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
+    }
 }

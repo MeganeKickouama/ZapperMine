@@ -42,8 +42,12 @@ public class Fang extends Fangs
             
             currentWorld.removeObject(coin);
             if (currentWorld.getObjects(Coins.class).size() == 0) {
-                
-                 Greenfoot.setWorld(new Level_Lost());
+                 Splash_Screen splash = new Splash_Screen();
+                 splash.stopped();
+                 
+                 Level_Lost level = new Level_Lost();
+                 Greenfoot.setWorld(level);
+                 level.started();
             }
         }
         
@@ -58,8 +62,6 @@ public class Fang extends Fangs
     public void touchBlock() {
         
         Actor vertical = (Actor)getOneIntersectingObject(Obstacle_Vertical.class);
-        
-        
         if (vertical != null) {
             
             turn(180);

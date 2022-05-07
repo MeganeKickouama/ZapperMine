@@ -24,7 +24,8 @@ public class Restart_Button extends Buttons
         
         if (Greenfoot.mouseClicked(this)) {
             if (getWorld() instanceof Level_Lost) {
-                 
+                
+                getWorld().stopped();
                 if (Level_3.isBeaten == true) {
                     
                     Greenfoot.setWorld(new Level_4());
@@ -41,7 +42,8 @@ public class Restart_Button extends Buttons
             }
             
             if (getWorld() instanceof Level_Won) {
-                 
+                
+                getWorld().stopped();
                 if (Level_4.isBeaten == true) {
                     
                     Greenfoot.setWorld(new Level_4());

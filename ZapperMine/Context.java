@@ -18,6 +18,7 @@ public class Context extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 700, 1); 
         prepare();
+        
     }
     /**
      * Prepare the world for the start of the program.
@@ -31,5 +32,11 @@ public class Context extends World
         addObject(previous_Button,119,568);
         Next_Button next_Button = new Next_Button();
         addObject(next_Button,119,488);
+    }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
     }
 }

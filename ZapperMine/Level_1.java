@@ -388,8 +388,13 @@ public class Level_1 extends World
         addObject(fang,98,100);
         coins15.setLocation(107,127);
         removeObject(coins15);
-        Counter counter = new Counter();
-        addObject(counter,746,223);
+        
+    }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
     }
 
     

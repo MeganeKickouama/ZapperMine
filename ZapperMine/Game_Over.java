@@ -26,10 +26,10 @@ public class Game_Over extends World
         gameOverMusic = new GreenfootSound("gameover.wav");
     }
     public void textEdited(String men,int x, int y){
-        GreenfootImage bg = getBackground();
-        Font font = new Font(80);
-        bg.setFont(font);
-        bg.drawString(men, x, y);
+        // GreenfootImage bg = getBackground();
+        // Font font = new Font(80);
+        // bg.setFont(font);
+        // bg.drawString(men, x, y);
         
     }
 }

@@ -19,6 +19,7 @@ public class Zapper_Dialogue extends World
         super(900, 700, 1);
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -26,10 +27,10 @@ public class Zapper_Dialogue extends World
     private void prepare()
     {
         Skip_Button skip_Button = new Skip_Button();
-        addObject(skip_Button,120,641);
+        addObject(skip_Button,701,629);
         Previous_Button previous_Button = new Previous_Button();
-        addObject(previous_Button,119,565);
+        addObject(previous_Button,701,564);
         Next_Button next_Button = new Next_Button();
-        addObject(next_Button,116,485);
+        addObject(next_Button,701,497);
     }
 }

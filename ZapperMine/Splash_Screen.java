@@ -8,18 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Splash_Screen extends World
 {
-
-    /**
-     * Constructor for objects of class Splash_Screen.
-     * 
-     */
-    private static GreenfootSound gamePlayMusic = new GreenfootSound("Zapslat_GamePlay.mp3");
+    private static GreenfootSound gamePlayMusic = new GreenfootSound("Zapslat_GamePlay.wav");
     public Splash_Screen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 700, 1);
-        // GreenfootSound gamePlayMusic = new GreenfootSound("Zapslat_GamePlay.mp3");
-        started();
+        //started();
         prepare();
         
     }

@@ -100,7 +100,11 @@ public class Level_3 extends World
         addObject(coins11,303,449);
         Coins coins12 = new Coins();
         addObject(coins12,598,447);
-        Counter counter = new Counter();
-        addObject(counter,746,53);
+    }
+    public void started() {
+        
+    }
+    public void stopped() {
+        
     }
 }

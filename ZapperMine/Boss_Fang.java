@@ -20,7 +20,6 @@ public class Boss_Fang extends Fangs
         touchBlock();
         eatZapper();
         
-        
     }
     
     public void eatCoin() {
@@ -34,14 +33,21 @@ public class Boss_Fang extends Fangs
             currentWorld.removeObject(coin);
             if (currentWorld.getObjects(Coins.class).size() == 0) {
                 
-                 Greenfoot.setWorld(new Level_Lost());
+                 Splash_Screen splash = new Splash_Screen();
+                 splash.stopped();
+                 
+                 Level_Lost level = new Level_Lost();
+                 Greenfoot.setWorld(level);
+                 level.started();
             }
         }
         
         if (silverCoin != null) { // when the fangs touch a silver coin, the game is automatically over. this makes the silver coin important to protect.
             
             currentWorld.removeObject(silverCoin);
-            Greenfoot.setWorld(new Level_Lost());
+            Level_Lost levelLost = new Level_Lost();
+            Greenfoot.setWorld(levelLost);
+            levelLost.started();
         }
     }
     

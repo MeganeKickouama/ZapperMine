@@ -12,10 +12,10 @@ public class Zapper extends Actor
     GifImage zapperLeft = new GifImage("Zapper_Side_View_(left).gif");
     GifImage zapperRight = new GifImage("Zapper_Side_View_(right).gif");
     
-    public static int coinsEatenLvl1 = 0;
-    public static int coinsEatenLvl2 = 0;
-    public static int coinsEatenLvl3 = 0;
-    public static int coinsEatenLvl4 = 0;
+    private static int coinsEatenLvl1 = 0;
+    private static int coinsEatenLvl2 = 0;
+    private static int coinsEatenLvl3 = 0;
+    private static int coinsEatenLvl4 = 0;
     
     public void act()
         {
@@ -26,7 +26,6 @@ public class Zapper extends Actor
         getImage().scale(80, 80);
         
         commands();
-        
         
         }
     
@@ -52,52 +51,53 @@ public class Zapper extends Actor
     // the point of the game is to get the last coin.
     public void eatCoin() {
         
-        World currentWorld = getWorld();
+        
         Actor coin = (Actor)getOneIntersectingObject(Coins.class);
         
         if (coin != null) {
             
-            currentWorld.removeObject(coin);
+            getWorld().removeObject(coin);
             Actor silver = (Actor)getOneIntersectingObject(Silver_Coin.class);
+            Greenfoot.playSound("sound-effects-library-cash-register-sound.mp3");
             
-            if (currentWorld instanceof Level_1) {
+            if (getWorld() instanceof Level_1) {
                     
                     coinsEatenLvl1++;
             }
-            if (currentWorld instanceof Level_2) {
+            if (getWorld() instanceof Level_2) {
                     
                     coinsEatenLvl2++;
             }
-            if (currentWorld instanceof Level_3) {
+            if (getWorld() instanceof Level_3) {
                     
                     coinsEatenLvl3++;
             }
-            if (currentWorld instanceof Level_4) {
+            if (getWorld() instanceof Level_4) {
                     
                     coinsEatenLvl4++;
             }
             // if instance of levels, coinseaten++
-            if (currentWorld.getObjects(Coins.class).size() == 0 &&
-            currentWorld.getObjects(Silver_Coin.class).size() == 0) {
+            if (getWorld().getObjects(Coins.class).size() == 0 &&
+            getWorld().getObjects(Silver_Coin.class).size() == 0) {
                 
-                currentWorld.stopped();
+                getWorld().stopped();
                 Level_Won lvlWon = new Level_Won();
                 Greenfoot.setWorld(lvlWon);
                 lvlWon.started();
-                if (currentWorld instanceof Level_1) {
+                if (getWorld() instanceof Level_1) {
                     
                     Level_1.isBeaten = true;
                     
                 }
-                if (currentWorld instanceof Level_2) {
+                if (getWorld() instanceof Level_2) {
                     
                     Level_2.isBeaten = true;
                 }
-                if (currentWorld instanceof Level_3) {
+                if (getWorld() instanceof Level_3) {
                     
                     Level_3.isBeaten = true;
                 }
-                if (currentWorld instanceof Level_4) {
+                if (getWorld() instanceof Level_4) {
                     
                     Level_4.isBeaten = true;
                 }
@@ -114,13 +114,32 @@ public class Zapper extends Actor
             
             currentWorld.removeObject(silver);
             Actor coin = (Actor)getOneIntersectingObject(Coins.class);
+            Greenfoot.playSound("sound-effects-library-cash-register-sound.mp3");
+
             
             if (currentWorld.getObjects(Coins.class).size() == 0 &&
                 currentWorld.getObjects(Silver_Coin.class).size() == 0) {
                     
                     Greenfoot.setWorld(new Level_Won());
+                    currentWorld.stopped();
                 }
             
         }
+    }
+    public int getCoinsEaten1() {
+        
+        return coinsEatenLvl1;
+    }
+    public int getCoinsEaten2() {
+        
+        return coinsEatenLvl2;
+    }
+    public int getCoinsEaten3() {
+        
+        return coinsEatenLvl3;
+    }
+    public int getCoinsEaten4() {
+        
+        return coinsEatenLvl4;
     }
 }
