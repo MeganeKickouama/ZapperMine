@@ -101,10 +101,5 @@ public class Level_3 extends World
         Coins coins12 = new Coins();
         addObject(coins12,598,447);
     }
-    public void started() {
-        
-    }
-    public void stopped() {
-        
-    }
+    
 }

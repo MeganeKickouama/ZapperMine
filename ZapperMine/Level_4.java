@@ -76,9 +76,33 @@ public class Level_4 extends World
         Zapper zapper = new Zapper();
         addObject(zapper,67,475);
         Boss_Fang boss_Fang = new Boss_Fang();
-        addObject(boss_Fang,134,102);
+        addObject(boss_Fang,439,100);
         Silver_Coin silver_Coin = new Silver_Coin();
         addObject(silver_Coin,804,100);
         zapper.setLocation(131,462);
+        Obstacle_Vertical obstacle_Vertical6 = new Obstacle_Vertical();
+        addObject(obstacle_Vertical6,281,377);
+        Obstacle_Vertical obstacle_Vertical7 = new Obstacle_Vertical();
+        addObject(obstacle_Vertical7,280,491);
+        Coins coins = new Coins();
+        addObject(coins,773,490);
+        Coins coins2 = new Coins();
+        addObject(coins2,261,105);
+        Coins coins3 = new Coins();
+        addObject(coins3,517,245);
+        Coins coins4 = new Coins();
+        addObject(coins4,341,488);
+        Obstacle_Horizontal obstacle_Horizontal17 = new Obstacle_Horizontal();
+        addObject(obstacle_Horizontal17,363,423);
+        Obstacle_Vertical obstacle_Vertical8 = new Obstacle_Vertical();
+        addObject(obstacle_Vertical8,439,372);
+        Silver_Coin silver_Coin2 = new Silver_Coin();
+        addObject(silver_Coin2,359,370);
+        Fang fang = new Fang();
+        addObject(fang,122,247);
+        Obstacle_Vertical obstacle_Vertical9 = new Obstacle_Vertical();
+        addObject(obstacle_Vertical9,422,246);
+        Silver_Coin silver_Coin3 = new Silver_Coin();
+        addObject(silver_Coin3,126,107);
     }
 }

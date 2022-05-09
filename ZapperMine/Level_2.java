@@ -123,10 +123,5 @@ public class Level_2 extends World
         fang.setLocation(243,106);
         fang.setLocation(263,116);
     }
-    public void started() {
-        
-    }
-    public void stopped() {
-        
-    }
+    
 }

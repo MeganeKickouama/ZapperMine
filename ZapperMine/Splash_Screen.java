@@ -12,7 +12,7 @@ public class Splash_Screen extends World
     public Splash_Screen()
     {    
         super(900, 700, 1);
-        //started();
+        
         prepare();
         
     }

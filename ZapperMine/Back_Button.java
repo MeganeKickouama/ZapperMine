@@ -21,8 +21,6 @@ public class Back_Button extends Buttons
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)) {
             setImage("Back.png");
         }
-        
-        
         if (Greenfoot.mouseClicked(this)) {
             if (getWorld() instanceof Access_Level) {
                 

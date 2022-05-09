@@ -39,12 +39,6 @@ public class Next_Button extends Buttons
             }
             if (getWorld() instanceof Nathan_Dialogue) {
 
-                Fangs_And_Boss_Dialogue fangs = new Fangs_And_Boss_Dialogue();
-                Greenfoot.setWorld(fangs);
-
-            }
-            if (getWorld() instanceof Fangs_And_Boss_Dialogue) {
-
                 Zapper_Dialogue zap = new Zapper_Dialogue();
                 Greenfoot.setWorld(zap);
 

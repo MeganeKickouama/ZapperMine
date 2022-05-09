@@ -25,6 +25,7 @@ public class Acces_Level_Button extends Buttons
             
             Access_Level Levels = new Access_Level();
             Greenfoot.setWorld(Levels);
+            getWorld().stopped();
         }
     }
 }

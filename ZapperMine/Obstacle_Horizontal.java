@@ -31,14 +31,15 @@ public class Obstacle_Horizontal extends Blocks
 
                 setLocation(mouse.getX(), mouse.getY());
                 return;
-                // make block highlighted
+                
+                
             }
 
             if (Greenfoot.mouseDragEnded(this)) {
 
                 dragLevel1--;
             }
-        } // else display "zero available drags"
+        } 
     }
 
     public void killZapper() {
